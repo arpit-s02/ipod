@@ -4,32 +4,34 @@
     margin: auto;
 }
 
-.wheelBackground{
-    height: 200px;
+/* .wheelBackground{
+    height: 210px;
     width: 300px; 
     background-color: #b9b9b9;
     position: relative;
     display: flex;
     justify-content: center;
-}
+    align-items: center;
+} */
 
 .wheelMenu{
-    position: absolute;
-    height: 100%;
+    position: relative;
+    height: 200px;
     width: 200px;
     border-radius: 50%;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
 }
 
 .wheelForeground{
     position: absolute;
     background-color: #b9b9b9;
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
 }
 
 .menuSpan{

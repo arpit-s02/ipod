@@ -1,38 +1,64 @@
 .screenContainer{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    width: 279px;
-    padding: 40px 10px;
+    /* border: 1px solid black; */
+    width: 300px;
+    height: 240px;
+    /* padding: 40px 10px; */
+}
+
+.screen{
+    border: 3px solid black;
+    display: flex;
+    height: 99%;
+    background-color: white;
+    border-radius: 5%;
+    overflow: hidden;
 }
 
 .screenMenu{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 150px;
-    /* height: 160px; */
+    width: 50%;
+    height: 90%;
+    /* background-color: white; */
+    /* border: 1px solid black; */
 
 }
 
 .menuItem{
     /* border: 1px solid black; */
     height: 35px;
-    width: 100%;
+    width: 97%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 5px;
+    margin-left: 5px;
 }
 
 .activeOption{
     /* border: 1px solid black; */
     height: 35px;
-    width: 100%;
+    width: 97%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 5px;
     background-color: #3783d8;
     color: white;
+    margin-left: 5px;
+
+}
+
+
+
+.screenWall{
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 50%;
+}
+
+.screenWall  img{
+    height: 100%;
+    width: 100%;
 }

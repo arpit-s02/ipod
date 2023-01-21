@@ -32,7 +32,7 @@ class WheelMenu extends React.Component{
         return(
             <div className="App">
                 <div className = "wheelContainer">
-                    <div className = "wheelBackground">
+                    {/* <div className = "wheelBackground"> */}
                         <div className = "wheelMenu" id = "wheelMenu">
                             <div className = "wheelForeground">
                             </div>
@@ -41,7 +41,7 @@ class WheelMenu extends React.Component{
                             <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" />
                             <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         );

@@ -5,23 +5,30 @@ import './WheelMenu.css';
 
 class WheelMenu extends React.Component{
 
-    // componentDidMount(){
-    //     var currAngle = 15;
-
-    //     const target = document.getElementById('wheelMenu');
-    //     console.log(target);
+    componentDidMount(){
+        var currAngle = 15;
+        var newAngle = 15;
+        const {changeSelectionClock, changeSelectionAntiClock} = this.props;
+        const target = document.getElementById('wheelMenu');
+        // console.log(target);
     
-    //     var region = new ZingTouch.Region(target);
+        var region = new ZingTouch.Region(target);
 
-    //     region.bind(target, 'rotate', (e) => {
-    //         currAngle += e.detail.distanceFromLast;
-    //         console.log('angle', currAngle);
-    //     });
-    // }
+        region.bind(target, 'rotate', (e) => {
+            newAngle += e.detail.distanceFromLast;
+            // console.log('angle', currAngle);
+            if((newAngle - currAngle) >= 15){
+                currAngle = newAngle;
+                changeSelectionClock(this.props.options);
+            }
+            else if(currAngle - newAngle >= 15){
+                currAngle = newAngle;
+                changeSelectionAntiClock(this.props.options);
+            }
+        });
+    }
 
-    render(){
-        
-
+    render(){ 
         return(
             <div className="App">
                 <div className = "wheelContainer">

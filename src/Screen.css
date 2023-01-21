@@ -1,0 +1,38 @@
+.screenContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 279px;
+    padding: 40px 10px;
+}
+
+.screenMenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    /* height: 160px; */
+
+}
+
+.menuItem{
+    /* border: 1px solid black; */
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px;
+}
+
+.activeOption{
+    /* border: 1px solid black; */
+    height: 35px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px;
+    background-color: #3783d8;
+    color: white;
+}

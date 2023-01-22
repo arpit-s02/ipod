@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import WheelMenu from './WheelMenu'
 import Screen from './Screen'
+import HomeScreen from './HomeScreen';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
 
 class App extends React.Component{
 
@@ -83,16 +86,21 @@ class App extends React.Component{
     const {options} = this.state;
 
     return (
-      <div className='app'>
-        <Screen
-          options = {options}
-        />
-        <WheelMenu
-          options = {options}
-          changeSelectionClock = {this.changeSelectionClock}
-          changeSelectionAntiClock = {this.changeSelectionAntiClock}
-        />  
-      </div>
+      <Router>
+        <div className='app'>
+          <Routes>
+            <Route exact path = '/' element = {<HomeScreen />}></Route>
+            <Route exact path = '/menu' element = {<Screen options = {options} />}></Route>
+          </Routes>
+          
+          <WheelMenu
+            options = {options}
+            changeSelectionClock = {this.changeSelectionClock}
+            changeSelectionAntiClock = {this.changeSelectionAntiClock}
+          />  
+        </div>
+      </Router>
+      
     );
   }
   

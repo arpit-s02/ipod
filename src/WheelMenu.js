@@ -1,7 +1,7 @@
 import React from "react";
 import ZingTouch from "zingtouch";
 import './WheelMenu.css';
-
+import { Link} from "react-router-dom";
 
 class WheelMenu extends React.Component{
 
@@ -32,16 +32,16 @@ class WheelMenu extends React.Component{
         return(
             <div className="App">
                 <div className = "wheelContainer">
-                    {/* <div className = "wheelBackground"> */}
-                        <div className = "wheelMenu" id = "wheelMenu">
-                            <div className = "wheelForeground">
-                            </div>
-                            <span className='menuSpan'> Menu </span>
-                            <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
-                            <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" />
-                            <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
+                    
+                    <div className = "wheelMenu" id = "wheelMenu">
+                        <div className = "wheelForeground">
                         </div>
-                    {/* </div> */}
+                        <Link to = '/menu' className = 'menuSpan'> Menu </Link>
+                        <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
+                        <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" />
+                        <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
+                    </div>
+                    
                 </div>
             </div>
         );

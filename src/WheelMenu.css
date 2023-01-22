@@ -4,16 +4,6 @@
     margin: auto;
 }
 
-/* .wheelBackground{
-    height: 210px;
-    width: 300px; 
-    background-color: #b9b9b9;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .wheelMenu{
     position: relative;
     height: 200px;
@@ -38,6 +28,8 @@
     position: absolute;
     top: 22px;
     font-weight: bold;
+    text-decoration: none;
+    color: black
 }
 
 .forward{

@@ -88,6 +88,7 @@ class App extends React.Component{
     return (
       <Router>
         <div className='app'>
+
           <Routes>
             <Route exact path = '/' element = {<HomeScreen />}></Route>
             <Route exact path = '/menu' element = {<Screen options = {options} />}></Route>

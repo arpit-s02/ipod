@@ -4,19 +4,24 @@ import './WheelMenu.css';
 import { Link} from "react-router-dom";
 
 class WheelMenu extends React.Component{
+    constructor(){
+        super();
+
+        this.state = {
+            path: ''
+        }
+    }
 
     componentDidMount(){
         var currAngle = 15;
         var newAngle = 15;
         const {changeSelectionClock, changeSelectionAntiClock} = this.props;
         const target = document.getElementById('wheelMenu');
-        // console.log(target);
     
         var region = new ZingTouch.Region(target);
 
         region.bind(target, 'rotate', (e) => {
             newAngle += e.detail.distanceFromLast;
-            // console.log('angle', currAngle);
             if((newAngle - currAngle) >= 15){
                 currAngle = newAngle;
                 changeSelectionClock(this.props.options);
@@ -26,9 +31,35 @@ class WheelMenu extends React.Component{
                 changeSelectionAntiClock(this.props.options);
             }
         });
+
+        if(window.location.href === 'http://localhost:3000/'){
+            this.setState({
+                path: '/menu'
+            })
+        }
+        else{
+            this.setState({
+                path: '../'
+            })
+        }
     }
 
-    render(){ 
+    changePath = () => {
+        let {path} = this.state;
+
+        if(path === '../' ){
+            this.setState({
+                path: '/menu'
+            })
+        }
+        else{
+            this.setState({
+                path: '../'
+            })
+        }
+    }
+
+    render(){
         return(
             <div className="App">
                 <div className = "wheelContainer">
@@ -36,7 +67,7 @@ class WheelMenu extends React.Component{
                     <div className = "wheelMenu" id = "wheelMenu">
                         <div className = "wheelForeground">
                         </div>
-                        <Link to = '/menu' className = 'menuSpan'> Menu </Link>
+                        <Link to = {this.state.path} onClick = {() => {this.changePath()}} className="menuSpan"> Menu</Link>
                         <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
                         <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" />
                         <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />

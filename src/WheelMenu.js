@@ -8,7 +8,7 @@ class WheelMenu extends React.Component{
         super();
 
         this.state = {
-            path: ''
+            path: '/menu'
         }
     }
 
@@ -31,17 +31,6 @@ class WheelMenu extends React.Component{
                 changeSelectionAntiClock(this.props.options);
             }
         });
-
-        if(window.location.href === 'http://localhost:3000/'){
-            this.setState({
-                path: '/menu'
-            })
-        }
-        else{
-            this.setState({
-                path: '../'
-            })
-        }
     }
 
     changePath = () => {

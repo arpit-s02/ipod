@@ -1,28 +1,11 @@
-.homeContainer{
-    /* border: 1px solid black; */
-    width: 300px;
-    height: 240px;
-    /* position: relative; */
-}
-
 .homeScreen{
     border: 3px solid black;
     display: flex;
-    height: 97%;
+    width: 294px;
+    height: 238px;;
     background-color: white;
     border-radius: 5%;
     overflow: hidden;
-}
-
-.homeScreenWall{
-    /* border: 1px solid black; */
-    height: 100%;
-    width: 100%;
     background-image: url("https://t4.ftcdn.net/jpg/05/21/18/03/360_F_521180377_2iAVJqBQSo3cgKaVp8vMBR8asrC61DoU.jpg")
-    /* background-size: ; */
-}
 
-.homeScreenWall  img{
-    height: 100%;
-    width: 100%;
 }

@@ -30,6 +30,8 @@ class WheelMenu extends React.Component{
                 currAngle = newAngle;
                 changeSelectionAntiClock(this.props.options);
             }
+        }, {
+            passive: true
         });
     }
 

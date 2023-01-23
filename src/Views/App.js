@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../Static/App.css';
 import WheelMenu from './WheelMenu'
 import HomeScreen from './HomeScreen';
 import { BrowserRouter as Router} from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React from "react";
 import ZingTouch from "zingtouch";
-import './WheelMenu.css';
+import '../Static/WheelMenu.css'
 import { Link} from "react-router-dom";
 
 class WheelMenu extends React.Component{

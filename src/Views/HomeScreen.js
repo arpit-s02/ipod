@@ -1,4 +1,4 @@
-import './HomeScreen.css'
+import '../Static/HomeScreen.css'
 import Screen from './Screen';
 import { Routes, Route, Outlet } from 'react-router-dom';
 

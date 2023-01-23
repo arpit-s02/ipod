@@ -1,5 +1,5 @@
 import React from "react";
-import './Screen.css'
+import '../Static/Screen.css'
 
 function Screen(props){
     var {options} = props;

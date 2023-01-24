@@ -31,11 +31,18 @@ class WheelMenu extends React.Component{
             newAngle += e.detail.distanceFromLast;
             if((newAngle - currAngle) >= 15){
                 currAngle = newAngle;
-                changeSelectionClock(this.props.options);
+                if(this.props.page === 'menu' || this.props.page === 'Songs'){
+                    // console.log(this.props.page)
+                    changeSelectionClock(this.props.options);
+                }
+                
             }
             else if(currAngle - newAngle >= 15){
                 currAngle = newAngle;
-                changeSelectionAntiClock(this.props.options);
+                if(this.props.page === 'menu' || this.props.page === 'Songs'){
+                    changeSelectionAntiClock(this.props.options);
+                }
+                
             }
         }, {
             passive: true

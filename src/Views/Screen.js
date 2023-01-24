@@ -4,7 +4,7 @@ import '../Static/Screen.css'
 
 function Screen(props){
     var {options} = props;
-
+    // console.log(props.active)
     return(
         <div className="screenMenu">
             <h1 style={{marginLeft: 5}}> Ipod </h1> 

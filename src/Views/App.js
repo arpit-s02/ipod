@@ -2,7 +2,6 @@ import React from 'react';
 import '../Static/App.css';
 import WheelMenu from './WheelMenu'
 import HomeScreen from './HomeScreen';
-import { BrowserRouter as Router} from 'react-router-dom';
 
 class App extends React.Component{
 
@@ -12,7 +11,8 @@ class App extends React.Component{
     this.state = {
       options: this.menu,
       page: 'homepage',
-      active: 'none'
+      active: 'none',
+      playing: false
     }
   }
 
@@ -38,13 +38,13 @@ class App extends React.Component{
   songs = [
     {
       name: 'Desires',
-      isActive: false,
+      isActive: true,
       id: '0',
       
     },
     {
         name: 'Brown Munde',
-        isActive: true,
+        isActive: false,
         id: '1',
     },
     {
@@ -55,6 +55,7 @@ class App extends React.Component{
   ]
 
   changeSelectionClock = (options) => {
+    // console.log('rotating');
     for(let i = 0; i < options.length; i++){
       if(options[i].isActive === true){
         options[i].isActive = false;
@@ -82,6 +83,7 @@ class App extends React.Component{
   }
 
   changeSelectionAntiClock = (options) => {
+    // console.log('rotating');
     for(let i = 0; i < options.length; i++){
       if(options[i].isActive === true){
         options[i].isActive = false;
@@ -133,7 +135,14 @@ class App extends React.Component{
     else if(this.state.page === 'Songs'){
       this.setState({
         page: 'menu',
-        options: this.menu
+        options: this.menu,
+        active: 'Songs'
+      })
+    }
+
+    else if(this.state.page === 'MusicScreen'){
+      this.setState({
+        page: 'Songs',
       })
     }
 
@@ -145,10 +154,39 @@ class App extends React.Component{
   }
 
   changeScreenButton = () => {
+    if(this.state.active === 'none'){
+      return;
+    }
+
+    if(this.state.page === 'Songs'){
+      this.setState({
+        page: 'MusicScreen',
+      })
+      return;
+    }
+
     if(this.state.active === 'Songs'){
       this.setState({
         page: this.state.active,
-        options: this.songs
+        options: [
+          {
+            name: 'Desires',
+            isActive: true,
+            id: '0',
+            
+          },
+          {
+              name: 'Brown Munde',
+              isActive: false,
+              id: '1',
+          },
+          {
+            name: 'Baller',
+            isActive: false,
+            id: '3',
+          }
+        ],
+        active: 'Desires'
       })
       return;
     }
@@ -158,26 +196,26 @@ class App extends React.Component{
   }
 
   render(){
+    // console.log(this.state.page);
     const {options} = this.state;
 
     return (
-      <Router>
-        <div className='app'>
-          <HomeScreen
-            options = {options}
-            page = {this.state.page}
-          />
-          
-          <WheelMenu
-            options = {options}
-            changeSelectionClock = {this.changeSelectionClock}
-            changeSelectionAntiClock = {this.changeSelectionAntiClock}
-            page = {this.state.page}
-            changeScreenMenu = {this.changeScreenMenu}
-            changeScreenButton = {this.changeScreenButton}
-          /> 
-        </div>
-      </Router>
+      <div className='app'>
+        <HomeScreen
+          options = {options}
+          page = {this.state.page}
+          active = {this.state.active}
+        />
+        
+        <WheelMenu
+          options = {options}
+          changeSelectionClock = {this.changeSelectionClock}
+          changeSelectionAntiClock = {this.changeSelectionAntiClock}
+          page = {this.state.page}
+          changeScreenMenu = {this.changeScreenMenu}
+          changeScreenButton = {this.changeScreenButton}
+        /> 
+      </div>
     );
   }
 }

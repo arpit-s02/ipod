@@ -3,6 +3,7 @@ import Screen from './Screen';
 import Games from './Games'
 import Settings from './Settings';
 import Songs from './Songs';
+import MusicScreen from './MusicScreen';
 
 function HomeScreen(props){
     const {options} = props;
@@ -12,6 +13,7 @@ function HomeScreen(props){
 
             {props.page === 'menu' ? <Screen 
                 options = {options}
+                active = {props.active}
             /> : ''}
 
             {props.page === 'Games' ? <Games 
@@ -23,6 +25,13 @@ function HomeScreen(props){
             {props.page === 'Songs' ? <Songs 
                 options = {options}
                 page = {props.page}
+                active = {props.active}
+            /> : ''}
+
+            {props.page === 'MusicScreen' ? <MusicScreen
+                options = {options}
+                page = {props.page}
+                active = {props.active}
             /> : ''}
             
         </div>

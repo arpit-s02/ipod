@@ -4,9 +4,10 @@ import '../Static/Screen.css'
 
 function Songs(props){
     var {options} = props;
+    // console.log(props.active);
     return(
         <div className="screenMenu">
-            <h1 style={{marginLeft: 5}}> Ipod </h1> 
+            <h1 style={{marginLeft: 5}}> Songs </h1> 
             {
             options.map((option) => {
                 

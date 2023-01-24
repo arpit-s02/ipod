@@ -2,9 +2,8 @@ import React from "react";
 
 import '../Static/Screen.css'
 
-function Screen(props){
+function Songs(props){
     var {options} = props;
-
     return(
         <div className="screenMenu">
             <h1 style={{marginLeft: 5}}> Ipod </h1> 
@@ -23,6 +22,4 @@ function Screen(props){
     );
 }
 
-
-
-export default Screen;
+export default Songs;

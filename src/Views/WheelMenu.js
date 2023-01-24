@@ -1,14 +1,21 @@
 import React from "react";
 import ZingTouch from "zingtouch";
 import '../Static/WheelMenu.css'
-import { Link} from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 class WheelMenu extends React.Component{
     constructor(){
         super();
 
-        this.state = {
-            path: '/menu'
+        if(window.location.href === 'http://localhost:3000/'){
+            this.state = {
+                nextPath: '/menu'
+            }
+        }
+        else{
+            this.state = {
+                nextPath: '../'
+            }
         }
     }
 
@@ -35,20 +42,44 @@ class WheelMenu extends React.Component{
         });
     }
 
-    changePath = () => {
-        let {path} = this.state;
+    getPathButton = () => {
+        const {options} = this.props;
 
-        if(path === '../' ){
-            this.setState({
-                path: '/menu'
-            })
-        }
-        else{
-            this.setState({
-                path: '../'
-            })
-        }
+        const a = options.filter((option) => option.isActive === true);
+
+        return a[0].name;
     }
+
+    changeMenuPath = () => {
+        const {nextPath} = this.state;
+
+        if(nextPath === '/menu'){
+            this.setState({
+                nextPath: '../'
+            })
+        }
+        else if(nextPath === '../'){
+            if(window.location.href === 'http://localhost:3000/menu'){
+                this.setState({
+                    nextPath: '/menu'
+                })
+            }
+            else{
+                this.setState({
+                    nextPath: '../'
+                })
+            }
+        }
+
+    }
+
+    // changeMenuPathButton = () => {
+    //     this.setState({
+    //         nextPath: '../'
+    //     })
+    // }
+
+    
 
     render(){
         return(
@@ -56,9 +87,12 @@ class WheelMenu extends React.Component{
                 <div className = "wheelContainer">
                     
                     <div className = "wheelMenu" id = "wheelMenu">
-                        <div className = "wheelForeground">
-                        </div>
-                        <Link to = {this.state.path} onClick = {() => {this.changePath()}} className="menuSpan"> Menu</Link>
+                        <button onClick = {this.props.changeScreenButton} className = "wheelForeground">
+                            <div>
+                            </div>
+                        </button>
+                        
+                        <button onClick = {this.props.changeScreenMenu} className="menuSpan"> Menu </button>        
                         <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
                         <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" />
                         <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
@@ -67,6 +101,7 @@ class WheelMenu extends React.Component{
                 </div>
             </div>
         );
+        
     }
 }
 

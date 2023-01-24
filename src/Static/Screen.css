@@ -20,7 +20,8 @@
 .screenMenu{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    /* margin: 5px 0px; */
     width: 50%;
     height: 100%;
     background-color: white;
@@ -36,6 +37,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2px 0px;
     margin-left: 5px;
 }
 
@@ -46,6 +48,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 2px 0px;
     background-color: #3783d8;
     color: white;
     margin-left: 5px;

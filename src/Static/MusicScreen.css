@@ -1,15 +1,16 @@
 .musicScreen{
     height: 100%;
     width: 100%;
-    background-color: white;
+    background-color: rgb(18, 5, 77);
+    color: aliceblue;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-image: url("https://w0.peakpx.com/wallpaper/411/68/HD-wallpaper-music-texture-grunge-music-background-music-concepts-background-with-notes-musical-notes.jpg"); */
+    background-image: none;
 }
 
 .musicImage{
-    border: 1px solid black;
+    /* border: 1px solid white; */
     height: 40%;
     width: 40%;
     margin-top: 55px;

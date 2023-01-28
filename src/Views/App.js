@@ -154,7 +154,11 @@ class App extends React.Component{
   }
 
   changeScreenButton = () => {
-    if(this.state.active === 'none'){
+    // if(this.state.active === 'none'){
+    //   return;
+    // }
+
+    if(this.state.page === 'MusicScreen' || this.state.page === 'homepage'){
       return;
     }
 
@@ -176,9 +180,9 @@ class App extends React.Component{
             
           },
           {
-              name: 'Brown Munde',
-              isActive: false,
-              id: '1',
+            name: 'Brown Munde',
+            isActive: false,
+            id: '1',
           },
           {
             name: 'Baller',
@@ -198,6 +202,7 @@ class App extends React.Component{
   render(){
     // console.log(this.state.page);
     const {options} = this.state;
+    // console.log(document.getElementById('song'));
 
     return (
       <div className='app'>
@@ -214,6 +219,8 @@ class App extends React.Component{
           page = {this.state.page}
           changeScreenMenu = {this.changeScreenMenu}
           changeScreenButton = {this.changeScreenButton}
+          playing = {this.playing}
+          play = {this.play}
         /> 
       </div>
     );

@@ -3,7 +3,7 @@
 }
 
 .wheelMenu{
-    position: relative;
+    /* position: relative; */
     height: 200px;
     width: 200px;
     border-radius: 50%;
@@ -18,13 +18,14 @@
     position: absolute;
     background-color: #b9b9b9;
     border-radius: 50%;
+    border: none;
     height: 80px;
     width: 80px;
 }
 
 .menuSpan{
-    position: absolute;
-    top: 22px;
+    position: fixed;
+    top: 340px;
     font-weight: bold;
     text-decoration: none;
     color: black
@@ -34,14 +35,14 @@
     position: absolute;
     height: 25px;
     width: 25px;
-    right: 15px;
+    right: 340px;
 }
 
 .backward{
     position: absolute;
     height: 25px;
     width: 25px;
-    left: 15px;
+    left: 340px;
 }
 
 .playPause{

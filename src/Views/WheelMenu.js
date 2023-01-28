@@ -96,6 +96,7 @@ class WheelMenu extends React.Component{
                     <div className = "wheelMenu" id = "wheelMenu">
                         <button onClick = {this.props.changeScreenButton} className = "wheelForeground">
                             <div>
+                                <span> <b> SELECT </b> </span>
                             </div>
                         </button>
                         

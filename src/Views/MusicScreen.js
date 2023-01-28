@@ -6,7 +6,10 @@ function MusicScreen(props){
     // using setState to get the changed value of slider
     const [isPlaying, setIsPlaying] = useState(true);
     const [percentage, setPercentage] = useState(0);
+
     const onChange = (e) => {
+        const audio = audioRef.current;
+        audio.currentTime = (audio.duration / 100) * e.target.value
         setPercentage(e.target.value);
     }
 
@@ -46,20 +49,36 @@ function MusicScreen(props){
         image = props.songs.Baller.image
     }
 
+    const getCurrDuration = (e) => {
+        const percent = ((e.currentTarget.currentTime / e.currentTarget.duration) * 100).toFixed(2);
+        setPercentage(percent);
+
+        if(e.currentTarget.currentTime === e.currentTarget.duration){
+            playPause();
+        }
+    }
+
+
     return(
         <div className="musicScreen">
             <div className='musicImage'>
                 <img style={styles.image} alt = "" src = {image} />
             </div>
-            <span style={{margin: '7px'}}> {props.active} </span>
+            <span style={{margin: '7px', marginBottom: '30px'}}> {props.active} </span>
+                       
             <Slider 
                 onChange = {onChange}
                 percentage = {percentage}
             />
-           
-           <audio ref = {audioRef} src = {song} id = "song"></audio>
-           <img style={styles.playPause} onClick={playPause} className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
+                
+           <audio 
+            ref = {audioRef} 
+            src = {song}
+            onTimeUpdate = {getCurrDuration}
+           ></audio>
+           {/* <img style={styles.forward} onClick={() => nextSong(props.options)} className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" /> */}
 
+           <img style={styles.playPause} onClick={playPause} className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
         </div>
     )
 }
@@ -71,6 +90,9 @@ const styles = {
     image: {
         height: `100%`,
         width: `100%`
+    },
+    forward: {
+        top: '405px'
     }
 }
 

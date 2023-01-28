@@ -4,6 +4,7 @@
     --thumb-height: 20px;
     position: relative;
     width: 90%;
+    /* margin: 0 auto; */
 }
 
 .range{

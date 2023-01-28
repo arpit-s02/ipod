@@ -14,6 +14,7 @@ class App extends React.Component{
       active: 'none',
       playing: false
     }
+
   }
 
   menu = [
@@ -61,10 +62,10 @@ class App extends React.Component{
         options[i].isActive = false;
         let nextIndex;
         if((i + 1) < options.length){
-            nextIndex = i + 1;
+          nextIndex = i + 1;
         }
         else{
-            nextIndex = 0;
+          nextIndex = 0;
         }
         options[nextIndex].isActive = true;
         // console.log(options[nextIndex].name)
@@ -79,6 +80,8 @@ class App extends React.Component{
     this.setState({
         options: options
     })
+
+
  
   }
 
@@ -198,6 +201,8 @@ class App extends React.Component{
       page: this.state.active,
     })
   }
+
+
 
   render(){
     // console.log(this.state.page);

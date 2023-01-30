@@ -21,6 +21,7 @@
     border: none;
     height: 80px;
     width: 80px;
+    cursor: pointer;
 }
 
 .menuSpan{
@@ -31,6 +32,7 @@
     color: black;
     height: 25px;
     width: 25px;
+    cursor: pointer;
 }
 
 .playPause{

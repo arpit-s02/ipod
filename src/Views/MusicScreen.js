@@ -74,6 +74,7 @@ function MusicScreen(props){
             return;
         }
         
+        props.changeSelectionClock(props.options);
     }
 
     const backward = () => {
@@ -93,6 +94,8 @@ function MusicScreen(props){
         else{
             return;
         }
+
+        props.changeSelectionAntiClock(props.options);
         
     }
 
@@ -124,7 +127,8 @@ function MusicScreen(props){
 
 const styles = {
     playPause: {
-        top: '470px'
+        top: '470px',
+        cursor: 'pointer'
     },
     image: {
         height: `100%`,
@@ -135,7 +139,8 @@ const styles = {
         height: '25px',
         width: '25px',
         right: '430px',
-        top: '400px'
+        top: '400px',
+        cursor: 'pointer'
 
     },
     backward: {
@@ -143,7 +148,8 @@ const styles = {
         height: '25px',
         width: '25px',
         left: '430px',
-        top: '400px'
+        top: '400px',
+        cursor: 'pointer'
     }
 }
 

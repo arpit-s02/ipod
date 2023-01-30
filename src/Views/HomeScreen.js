@@ -57,6 +57,8 @@ function HomeScreen(props){
                 page = {props.page}
                 active = {props.active}
                 songs = {songs}
+                changeSelectionClock = {props.changeSelectionClock}
+                changeSelectionAntiClock = {props.changeSelectionAntiClock}
             /> : ''}
             
         </div>

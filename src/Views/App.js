@@ -72,7 +72,6 @@ class App extends React.Component{
         this.setState({
           active: options[nextIndex].name
         })
-        // console.log(this.state.active);
         break;
       }
     }
@@ -80,9 +79,6 @@ class App extends React.Component{
     this.setState({
         options: options
     })
-
-
- 
   }
 
   changeSelectionAntiClock = (options) => {
@@ -110,7 +106,6 @@ class App extends React.Component{
     this.setState({
         options: options
     })
- 
   }
 
   changeScreenMenu = () => {
@@ -215,6 +210,8 @@ class App extends React.Component{
           options = {options}
           page = {this.state.page}
           active = {this.state.active}
+          changeSelectionClock = {this.changeSelectionClock}
+          changeSelectionAntiClock = {this.changeSelectionAntiClock}
         />
         
         <WheelMenu

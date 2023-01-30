@@ -127,7 +127,7 @@ function MusicScreen(props){
 
 const styles = {
     playPause: {
-        top: '470px',
+        top: '450px',
         cursor: 'pointer'
     },
     image: {
@@ -138,8 +138,8 @@ const styles = {
         position: 'absolute',
         height: '25px',
         width: '25px',
-        right: '430px',
-        top: '400px',
+        right: '75px',
+        top: '380px',
         cursor: 'pointer'
 
     },
@@ -147,8 +147,8 @@ const styles = {
         position: 'absolute',
         height: '25px',
         width: '25px',
-        left: '430px',
-        top: '400px',
+        left: '75px',
+        top: '380px',
         cursor: 'pointer'
     }
 }

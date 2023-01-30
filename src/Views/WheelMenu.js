@@ -96,14 +96,11 @@ class WheelMenu extends React.Component{
                     <div className = "wheelMenu" id = "wheelMenu">
                         <button onClick = {this.props.changeScreenButton} className = "wheelForeground">
                             <div>
-                                <span> <b> SELECT </b> </span>
+                                <span style={{fontFamily: 'emoji'}}> <b> SELECT </b> </span>
                             </div>
                         </button>
                         
-                        <button onClick = {this.props.changeScreenMenu} style = {{border: 'none', backgroundColor: 'white'}} className="menuSpan"> MENU </button>        
-                        {/* <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
-                        <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" /> */}
-                        {/* <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" /> */}
+                        <img onClick = {this.props.changeScreenMenu} alt = "" src = "https://cdn-icons-png.flaticon.com/512/2976/2976215.png" className="menuSpan" />
                     </div>
                     
                 </div>

@@ -25,24 +25,12 @@
 
 .menuSpan{
     position: fixed;
-    top: 340px;
+    top: 335px;
     font-weight: bold;
     text-decoration: none;
-    color: black
-}
-
-/* .forward{
-    position: absolute;
+    color: black;
     height: 25px;
     width: 25px;
-    right: 340px;
-} */
-
-.backward{
-    position: absolute;
-    height: 25px;
-    width: 25px;
-    left: 340px;
 }
 
 .playPause{

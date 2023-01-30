@@ -76,6 +76,26 @@ function MusicScreen(props){
         
     }
 
+    const backward = () => {
+
+        // selecting the next song from the array
+        if(song === props.songs[2].audio){
+            setSong(props.songs[1].audio);
+            setImage(props.songs[1].image);
+            setSongName(props.songs[1].name);
+        }
+        else if(song === props.songs[1].audio){
+            setSong(props.songs[0].audio);
+            setImage(props.songs[0].image);
+            setSongName(props.songs[0].name);
+            
+        }
+        else{
+            return;
+        }
+        
+    }
+
 
     return(
         <div className="musicScreen">
@@ -94,6 +114,7 @@ function MusicScreen(props){
             src = {song}
             onTimeUpdate = {getCurrDuration}
            ></audio>
+           <img style={styles.backward} onClick = {backward} className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" /> 
            <img style={styles.forward} onClick = {forward} className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
 
            <img style={styles.playPause} onClick={playPause} className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" />
@@ -116,6 +137,13 @@ const styles = {
         right: '430px',
         top: '400px'
 
+    },
+    backward: {
+        position: 'absolute',
+        height: '25px',
+        width: '25px',
+        left: '430px',
+        top: '400px'
     }
 }
 

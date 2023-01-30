@@ -31,12 +31,12 @@
     color: black
 }
 
-.forward{
+/* .forward{
     position: absolute;
     height: 25px;
     width: 25px;
     right: 340px;
-}
+} */
 
 .backward{
     position: absolute;

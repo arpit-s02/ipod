@@ -4,9 +4,9 @@ import Games from './Games'
 import Settings from './Settings';
 import Songs from './Songs';
 import MusicScreen from './MusicScreen';
-import Desires from './Desires.mp3'
-import BrownMunde from './BrownMunde.mp3'
-import Baller from './Baller.mp3'
+import Desires from '../Songs/Desires.mp3'
+import BrownMunde from '../Songs/BrownMunde.mp3'
+import Baller from '../Songs/Baller.mp3'
 import { useState } from 'react';
 
 function HomeScreen(props){

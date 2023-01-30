@@ -100,7 +100,7 @@ class WheelMenu extends React.Component{
                             </div>
                         </button>
                         
-                        <button onClick = {this.props.changeScreenMenu} className="menuSpan"> Menu </button>        
+                        <button onClick = {this.props.changeScreenMenu} style = {{border: 'none', backgroundColor: 'white'}} className="menuSpan"> MENU </button>        
                         {/* <img  className='forward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/4211/4211386.png" />
                         <img  className='backward' alt = "" src = "https://cdn-icons-png.flaticon.com/512/3318/3318703.png" /> */}
                         {/* <img  className='playPause' alt = "" src = "https://cdn-icons-png.flaticon.com/512/7960/7960808.png" /> */}

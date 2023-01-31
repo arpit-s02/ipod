@@ -29,6 +29,7 @@ class WheelMenu extends React.Component{
 
         region.bind(target, 'rotate', (e) => {
             newAngle += e.detail.distanceFromLast;
+            // console.log(this.props);
             if((newAngle - currAngle) >= 15){
                 currAngle = newAngle;
                 if(this.props.page === 'menu' || this.props.page === 'Songs'){
@@ -44,8 +45,6 @@ class WheelMenu extends React.Component{
                 }
                 
             }
-        }, {
-            passive: true
         });
     }
 
